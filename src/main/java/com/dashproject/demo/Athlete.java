@@ -1,6 +1,8 @@
 package com.dashproject.demo;
 
+import jakarta.persistence.Entity;
 
+@Entity
 public class Athlete {
     private Long id;
     private String name;
