@@ -1,4 +1,4 @@
-package com.dashproject.demo.controller;
+package com.olympic.proj.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dashproject.demo.model.Athlete;
-import com.dashproject.demo.service.AthleteService;
+import com.olympic.proj.model.Athlete;
+import com.olympic.proj.service.AthleteService;
 
 import org.springframework.web.bind.annotation.RequestParam;
 

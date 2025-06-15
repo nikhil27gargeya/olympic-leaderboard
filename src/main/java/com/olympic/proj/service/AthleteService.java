@@ -1,4 +1,4 @@
-package com.dashproject.demo.service;
+package com.olympic.proj.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dashproject.demo.model.Athlete;
-import com.dashproject.demo.repository.AthleteRepository;
+import com.olympic.proj.model.Athlete;
+import com.olympic.proj.repository.AthleteRepository;
 
 //contains business logic, namely for the REST API
 

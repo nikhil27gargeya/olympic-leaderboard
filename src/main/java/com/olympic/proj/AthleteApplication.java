@@ -1,4 +1,4 @@
-package com.dashproject.demo;
+package com.olympic.proj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

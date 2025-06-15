@@ -1,4 +1,4 @@
-package com.dashproject.demo.model;
+package com.olympic.proj.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
