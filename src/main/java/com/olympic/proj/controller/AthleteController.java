@@ -59,7 +59,16 @@ public class AthleteController {
 
     @GetMapping("/athletes/medal")
     public List<Athlete> getAthleteByMedal(@RequestParam String medal) {
-        return athleteService.getAthleteFromMedal(medal);
+        switch (medal.toUpperCase()) {
+            case "G":
+                return athleteService.getAthletesByMedalChar("G");
+            case "S":
+                return athleteService.getAthletesByMedalChar("S");
+            case "B":
+            return athleteService.getAthletesByMedalChar("B");
+            default:
+            throw new IllegalArgumentException("Invalid medal type");
+        }
     }
 
 }

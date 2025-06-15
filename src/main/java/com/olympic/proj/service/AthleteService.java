@@ -49,9 +49,9 @@ public class AthleteService {
         return athleteRepository.findByName(name);
     }
 
-    public List<Athlete> getAthleteFromMedal(String medal) {
-        return athleteRepository.findAll().stream()
-            .filter(athlete -> athlete.getMedal().contains("G"))
-            .collect(Collectors.toList());
+    public List<Athlete> getAthletesByMedalChar(String medal) {
+    return athleteRepository.findAll().stream()
+        .filter(athlete -> athlete.getMedal() != null && athlete.getMedal().contains(medal))
+        .collect(Collectors.toList());
     }
 }
