@@ -16,7 +16,7 @@ public class Athlete {
     private String gender;
     private String event;
     private String location;
-    private int year;
+    private String year;
     private String medal;
     private String name;
     private String nationality;
@@ -26,7 +26,7 @@ public class Athlete {
         
     }
 
-    public Athlete(String id, String gender, String event, String location, int year, String medal, String name,
+    public Athlete(String id, String gender, String event, String location, String year, String medal, String name,
             String nationality, String result) {
         this.id = id;
         this.gender = gender;
@@ -71,11 +71,11 @@ public class Athlete {
         this.location = location;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

@@ -24,10 +24,10 @@ public class AthleteService {
     public List<Athlete> getAthletes() {
         return athleteRepository.findAll();
     }
-    
+
     public List<Athlete> getAthletesFromNationality(String nationality) {
         return athleteRepository.findAll().stream()
-            .filter(athlete -> athlete.getNationality().equalsIgnoreCase(nationality))
+            .filter(athlete -> athlete.getNationality().trim().equals(nationality))
             .collect(Collectors.toList());
     }
 
@@ -47,5 +47,11 @@ public class AthleteService {
 
     public Optional<Athlete> getAthleteByName(String name) {
         return athleteRepository.findByName(name);
+    }
+
+    public List<Athlete> getAthleteFromMedal(String medal) {
+        return athleteRepository.findAll().stream()
+            .filter(athlete -> athlete.getMedal().contains("G"))
+            .collect(Collectors.toList());
     }
 }

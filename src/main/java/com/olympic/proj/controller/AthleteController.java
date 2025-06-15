@@ -57,6 +57,11 @@ public class AthleteController {
         return athleteService.getAthletesFromNationality(nationality);
     }
 
+    @GetMapping("/athletes/medal")
+    public List<Athlete> getAthleteByMedal(@RequestParam String medal) {
+        return athleteService.getAthleteFromMedal(medal);
+    }
+
 }
 
 /*
@@ -66,6 +71,6 @@ GET /athletes/{id}: get a specific athlete by ID
 POST /athletes: create a new athlete
 DELETE /athletes/{id}
 PUT /athletes/{id}
-GET /athletes/{id}/nationality
+GET /athletes/nationality
 
 */
