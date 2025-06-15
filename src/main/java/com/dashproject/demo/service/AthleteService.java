@@ -44,4 +44,8 @@ public class AthleteService {
     public Optional<Athlete> getAthleteById(String id) {
         return athleteRepository.findById(id);
     }
+
+    public Optional<Athlete> getAthleteByName(String name) {
+        return athleteRepository.findByName(name);
+    }
 }

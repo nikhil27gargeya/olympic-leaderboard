@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AthleteController {
     private final AthleteService athleteService;
 
-    //required dependencies will be injected at runtime
+    //delegates business logic to the service layer
     @Autowired
     public AthleteController(AthleteService athleteService) {
         this.athleteService = athleteService;
@@ -35,6 +35,13 @@ public class AthleteController {
     @GetMapping("/athletes/{id}")
     public ResponseEntity<Athlete> getAthleteById(@PathVariable String id) {
         return athleteService.getAthleteById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/athletes/name")
+    public ResponseEntity<Athlete> getAthleteByName(@RequestParam String name) {
+        return athleteService.getAthleteByName(name)
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
     }
