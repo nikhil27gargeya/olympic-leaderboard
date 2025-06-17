@@ -46,6 +46,11 @@ public class AthleteController {
             .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/athletes/search")
+    public List<Athlete> search(@RequestParam String name) {
+        return athleteService.searchByName(name);
+    }  
+
     @PostMapping("/athletes")
     public String createAthlete(@RequestBody Athlete athlete) {
         athleteService.saveAthlete(athlete);
@@ -69,6 +74,11 @@ public class AthleteController {
             default:
             throw new IllegalArgumentException("Invalid medal type");
         }
+    }
+
+    @GetMapping("/athletes/city")
+    public List<Athlete> getAthletesByCity(@RequestParam String city) {
+        return athleteService.getAthletesByCity(city);
     }
 
 }

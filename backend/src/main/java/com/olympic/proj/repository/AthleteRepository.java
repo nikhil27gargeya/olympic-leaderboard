@@ -1,5 +1,6 @@
 package com.olympic.proj.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,5 +14,5 @@ import com.olympic.proj.model.Athlete;
 public interface AthleteRepository extends JpaRepository<Athlete, String> {
     void deleteByName(String athleteName);
     Optional<Athlete> findByName(String name);
-    
+    List<Athlete> findByNameContainingIgnoreCase(String name);
 }

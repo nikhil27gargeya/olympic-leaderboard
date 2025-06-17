@@ -54,4 +54,14 @@ public class AthleteService {
         .filter(athlete -> athlete.getMedal() != null && athlete.getMedal().contains(medal))
         .collect(Collectors.toList());
     }
+
+    public List<Athlete> getAthletesByCity(String city) {
+    return athleteRepository.findAll().stream()
+            .filter(athlete -> athlete.getLocation().equalsIgnoreCase(city))
+            .collect(Collectors.toList());
+    }
+
+    public List<Athlete> searchByName(String name) {
+        return athleteRepository.findByNameContainingIgnoreCase(name);
+    }
 }
