@@ -6,7 +6,7 @@ cd backend
 brew install maven  
 mvn spring-boot:run  
 
-(React frontend)
+(React frontend)  
 cd frontend  
 npm install  
 npm run dev  
