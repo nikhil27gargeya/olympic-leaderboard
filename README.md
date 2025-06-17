@@ -1,7 +1,12 @@
 # Track and Field Olympics Visualization
 
-To run,
+To run:
+cd backend
+brew install maven
+mvn spring-boot:run
+
 
 cd frontend
 npm install
-cd backend
+npm run dev
+
